@@ -1,0 +1,500 @@
+<html>
+    <head>
+        <title>
+            Protótipo Base Legal - Obrigações
+        </title>
+        <script type="text/javascript" src="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/js/vendor/jquery/jquery-1.10.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/app/prototipo/baseLegalPrototipo.css">
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/app/prototipo/bootstrap-responsive.prototipo.min.css">
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/app/prototipo/variablesPrototipo.css">
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/app/prototipo/gui-icons-size-prototipo.css">
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/vendor/select2/select2.css">
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/app/prototipo/baseLegalComponentePrototipo.css">
+    </head>
+    <body>
+        <div class="span12">
+            <div  id="criterioVencimentoBody" class="agrupador">
+                <div id="subtituloCriterioVencimento" class="row-fluid">
+                    <div class="span12">
+                        <h4 class="black">
+                            <span id="criterioVencimentoTitulo">Transporte aéreo</span>
+                        </h4>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="formContainer">
+                            <div class="row-fluid ly-row-spaced">
+                                <div class="span12">
+                                    <div class="span10">
+                                        <label for="descricao_criterio">Descrição:</label><br />
+                                        <textarea rows="5" id="descricao_criterio" class="textareaCriterioVencimentoPrototipo">Transporte aéreo</textarea>
+                                    </div>
+                                    <div class="span2">
+                                        <div class="row-fluid inicio-efeito">
+                                            <label for="inicio_instituidora_criterio">Início de Efeito:</label><br />
+                                            <input type="text" class="textDateInicioFim" name="inicio_instituidora_criterio" id="inicio_instituidora_criterio" value="14/03/1990"/>
+                                        </div>
+
+                                        <div class="row-fluid ly-row-spaced fim-efeito">
+                                            <label for="fim_instituidora_criterio">Fim de Efeito:</label><br />
+                                            <input type="text" class="textDateInicioFim" name="fim_instituidora_criterio" id="fim_instituidora_criterio" value=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br/>
+                            <!--base legal do critério-->
+                            <div>
+                                <label for="addBaseLegal" style="font-weight: bold"> Bases Legais: </label>
+                                <input type="hidden" id="hiddenBasesLegais" value="0"/>
+                                <button id="addBaseLegal" type="button" onclick="addBaseLegal('criterio')">+</button>
+                            </div>
+
+                            <div id="divBaseLegais">
+                            </div>
+                            <!--</div>-->
+                            <br/>
+                            <div class="row-fluid ly-row-spaced" id="periodoFatoGeradorCriterio">
+                                <div class="span12">
+                                    <div  class="row-fluid ly-row-spaced">
+                                        <div id="periodoFatoGerador"  class="span12 bg-grayLight periodoFatoGeradorApl">
+                                            <div class="row-fluid" id="acoesPeriodo_{{chave}}">
+                                                <strong>Período do fato gerador</strong> <a href="javascript:void(0);" class="add pull-right"><i class="icon-obg-plus input-xxlarge"></i>&nbsp; Incluir novo período</a>
+                                            </div>
+                                            <div class="row-fluid" id="periodos_criterioVencimento">
+                                                <div class="row-fluid ly-row-spaced" id="{{chave}}">
+                                                    <div class="span12">
+                                                        <div class="row-fluid">
+                                                            <div class="span7">
+                                                                <div class="row-fluid">
+                                                                    <label for="periodicidade_periodo_criterio">Periodicidade:</label><br/>
+                                                                    <input type="text" id="periodicidade_periodo_criterio" class="select2-search"
+                                                                           value="Mensal - Convênio ICMS nº 93/2015, cláusula quinta, § 2º|Decreto nº 8/1998, RICMS, artigo 184-N § 2º | Decreto nº 3.912/2015, artigo 2º"  >
+                                                                </div>
+                                                            </div>
+                                                            <div class="span2">
+                                                                <div class="row-fluid">
+                                                                    <label for="primeiro_periodo_criterio">Primeiro período: <i id="hintPeriodicidade_periodo_criterio_primeiro" class="blue icon-gui-help has-popover"> </i></label><br/>
+                                                                    <input type="text" name="primeiroPeriodo" id="primeiro_periodo_criterio" value="2016/jan"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="span2">
+                                                                <div class="row-fluid">
+                                                                    <label for="ultimo_periodo_criterio">Último período: <i id="hintPeriodicidade_periodo_criterio_ultimo" class="blue icon-gui-help has-popover"> </i></label><br/>
+                                                                    <input type="text" name="ultimoPeriodo" id="ultimo_periodo_criterio" value=""/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="span1">
+                                                                <div class="row-fluid"><br/>
+                                                                    <a href="javascript:void(0);" id="delete_periodo_criterio"><i class="icon-gui-delete icon-large"></i></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grupo ly-read-content" id="condicacaoPagamentoCriterio">
+                                <div class="span12">
+                                    <legend class="subdivisaoPrototipo" data-entidade="condicaoPagamento" id="headerCondicaoPagamento">
+                                        Condição de Pagamento <a href="javascript:void(0);" class="add pull-right"><i class="icon-obg-plus input-xxlarge"></i>&nbsp; Adicionar Condição de Pagamento</a>
+                                    </legend>
+                                    <div class="agrupador detalhe">
+                                        <div class="row-fluid ly-row-spaced-bottom">
+                                            <div class="expandirColapsarTodos" id="expandirColapsar_condicoesPagamento_criterio">
+                                            </div>
+                                            <div class="pull-right">
+                                                <a href="javascript:void(0);" id="link_notas_condicao_pagamento_criterio"><i class="icon-gui-postit icon-large icon-btn-postit"></i>&nbsp;</a>
+                                            </div>
+                                        </div>
+                                        <div  id="condicaoPagamento_criterio" class="row-fluid ly-row-spaced condicaoPagamento">
+
+                                            <div class="row-fluid subtitulo {{toLowerCase status.chave}} subtituloInnerQualificacao">
+                                                <div class="span10">
+                                                    <h4 class="black"><span id="condicaoPagamentoTitulo_criterio">Integral</span></h4>
+                                                </div>
+                                                <div class="span2">
+                                                    <a href="javascript:void(0);" id="deleteCondicaoPagamento_criterio" class="delete" title="Excluir aplicabilidade"><i class="icon-btn-delete icon-gui-delete icon-large"></i></a>
+                                                    <div class="pull-right">
+                                                        <a href="javascript:void(0);" id="link_notas_condicao_criterio"><i class="icon-gui-postit icon-btn-postit icon-large"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row-fluid detalhe">
+                                                <div class="formContainer">
+                                                    <div class="row-fluid">
+                                                        <div class="span10">
+                                                            <label for="tipo_criterio">Condição de Pagamento:</label><br />
+                                                            <input id="tipo_criterio" type="text" class="select2-search" value="Integral">
+                                                        </div>
+
+                                                        <div class="span2">
+                                                            <label for="valorMinimo_criterio">Valor Mínimo:</label>
+                                                            <input type="text" name="valorMinimo_criterio" id="valorMinimo_criterio" value="R$ 0,00"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <!-- REGRA DE VENCIMENTO -->
+                                            <div class="row-fluid ly-row-spaced">
+                                                <div class="span12">
+                                                    <legend class="subdivisao" data-entidade="regraVencimento" id="headerRegraVencimento">
+                                                        Regras de Vencimento  <span class="links pull-right"><a href="javascript:void(0);" class="previewVencimentos" id="previewVencimentos_criterio" title="Preview de Vencimentos"><i class="icon-gui-calendar input-xxlarge"></i> Preview de Vencimentos</a> <a href="javascript:void(0);" class="add"><i class="icon-obg-plus input-xxlarge"></i>&nbsp; Adicionar Regra de Vencimento</a></span>
+                                                    </legend>
+
+                                                    <div class="agrupador detalhe">
+                                                        <div class="row-fluid ly-row-spaced-bottom">
+                                                            <div class="expandirColapsarTodos" data-entidade="regraVencimento" id="expandirColapsar_regrasDeVencimento_criterio">
+                                                            </div>
+                                                            <div class="pull-right">
+                                                                <a href="javascript:void(0);" id="link_notas_regra_criterio"><i class="icon-gui-postit icon-large icon-btn-postit"></i>&nbsp;</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row-fluid ly-row-spaced-bottom" id="regrasDeVencimento_criterio">
+                                                            <div id="regraVencimento_criterio" class="row-fluid ly-row-spaced-bottom recorrencia">
+                                                                <div class="row-fluid subtitulo {{toLowerCase status.chave}} subtituloInnerQualificacao">
+                                                                    <div class="span10">
+                                                                        <h4 class="black">
+                                                                            <span id="regraVencimentoTitulo_criterio">Remetente, quando o destinatário não for contribuinte do imposto</span>
+                                                                        </h4>
+                                                                    </div>
+
+                                                                    <div class="span2">
+                                                                        <a href="javascript:void(0);" id="deleteRegraVencimento_criterio" class="delete"
+                                                                           title="Excluir Regras de Vencimento"><i class="icon-btn-delete icon-gui-delete icon-large"></i></a>
+                                                                        <div class="pull-right">
+                                                                            <a href="javascript:void(0);" id="link_regra_notas_criterio"><i class="icon-gui-postit icon-btn-postit icon-large"></i></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row-fluid detalhe">
+                                                                    <div class="formContainer">
+                                                                        <div class="row-fluid">
+                                                                            <div class="row-fluid">
+                                                                                <div class="span12">
+                                                                                    <div class="span10">
+                                                                                        <label for="criterioDistincao_criterio">Critério de Distinção:</label><br/>
+                                                                                        <textarea rows="5" id="criterioDistincao_criterio" class="textareaCriterioVencimentoPrototipo">Remetente, quando o destinatário não for contribuinte do imposto</textarea>
+                                                                                    </div>
+                                                                                    <div class="span2">
+                                                                                        <div class="row-fluid inicio-efeito">
+                                                                                            <label for="inicio_instituidora_regra_vencimento">Início de Efeito:</label><br />
+                                                                                            <input type="text" class="textDateInicioFim" name="inicio_instituidora_criterio" id="inicio_instituidora_regra_vencimento" value="14/03/1990"/>
+                                                                                        </div>
+
+                                                                                        <div class="row-fluid ly-row-spaced fim-efeito">
+                                                                                            <label for="fim_instituidora_regra_vencimento">Fim de Efeito:</label><br />
+                                                                                            <input type="text" class="textDateInicioFim" name="fim_instituidora_criterio" id="fim_instituidora_regra_vencimento" value=""/>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <br/>
+
+                                                                            <div>
+                                                                                <label for="addBaseLegal" style="font-weight: bold"> Bases Legais: </label>
+                                                                                <input type="hidden" id="hiddenBasesLegaisRegra" value="0"/>
+                                                                                <button id="addBaseLegalRegra" type="button" onclick="addBaseLegal('regra')">+</button>
+                                                                            </div>
+
+                                                                            <div id="divBaseLegaisRegra">
+                                                                            </div>
+                                                                            <br/>
+
+                                                                            <div id="divPeriodo" class="row-fluid ly-row-spaced">
+                                                                                <div class="span2 fieldset">
+                                                                                    <label for="diaVencimento_criterio">Dia de Vencimento:</label><br/>
+                                                                                    <input type="text" name="diaVencimento_criterio" id="diaVencimento_criterio"
+                                                                                           value="15"/>
+                                                                                </div>
+
+                                                                                <div class="span2 fieldset">
+                                                                                    <label for="diaNoFinalPeriodo_criterio">Dia no final do período:</label><br/>
+                                                                                    <input class="chosen" id="diaNoFinalPeriodo_criterio" type="text"/>
+                                                                                </div>
+
+
+                                                                                <div class="span1 fieldset">
+                                                                                    <label for="util_criterio">Util:</label><br>
+                                                                                    <input type="checkbox" name="util" id="util_criterio" value=""/>
+                                                                                </div>
+
+                                                                                <div class="span2 fieldset">
+                                                                                    <label for="acaoDiaNaoUtil_criterio">Ação para dias não úteis:</label><br>
+                                                                                    <input class="chosen" id="acaoDiaNaoUtil_criterio" type="text"/>
+                                                                                </div>
+
+                                                                                <div id="periodoContainer" class="span4">
+                                                                                    <fieldset>
+                                                                                        <legend>Período de Vencimento</legend>
+                                                                                        <div class="span3">
+                                                                                            <label for="valor_criterio">Quantidade:</label><br>
+                                                                                            <input type="text" name="valor" id="valor_criterio" value="1" style="width: 78px"/>
+                                                                                        </div>
+
+                                                                                        <div class="span5">
+                                                                                            <label for="periodo_criterio">Período:</label><br>
+                                                                                            <input class="chosen" id="periodo_criterio" value="Mês" style="width: 125px"/>
+                                                                                        </div>
+
+                                                                                        <div class="span2">
+                                                                                            <label for="subsequente_criterio">Subsequente:</label><br>
+                                                                                            <input type="checkbox" name="subsequente" id="subsequente_criterio" value="{{periodoSubsequente.subsequente}}"
+                                                                                                   {{verifyChecked this periodoSubsequente.subsequente}} {{#bloquearEdicao this "periodoSubsequente"}}disabled{{/bloquearEdicao}}>
+                                                                                        </div>
+                                                                                    </fieldset>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="row-fluid ly-row-spaced" id="periodoContainer_criterio">
+                                                                                <div class="span12">
+                                                                                    <div class="row-fluid">
+                                                                                        <div class="span6">
+                                                                                            <div class="row-fluid">
+                                                                                                <label for="periodicidade_criterio">Periodicidade:</label><br/>
+                                                                                                <input type="text" id="periodicidade_criterio" class="select2-search" value="Mensal - Convênio ICMS nº 93/2015, cláusula quinta, § 2º|Decreto nº 8/1998, RICMS, artigo 184-N § 2º | Decreto nº 3.912/2015, artigo 2º"/>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="span2">
+                                                                                            <div class="row-fluid">
+                                                                                                <label for="primeiro_criterio">Primeiro período: </label><br/>
+                                                                                                <input type="text" name="primeiroPeriodo" id="primeiro_criterio" value="2016/jan" />
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="span2">
+                                                                                            <div class="row-fluid">
+                                                                                                <label for="ultimo_criterio">Último período: </label><br/>
+                                                                                                <input type="text" name="ultimoPeriodo" id="ultimo_criterio" value=""/>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="span1">
+                                                                                            <div class="row-fluid" style="width: 110px;">
+                                                                                                <label for="revogada_criterio">Excluir Vencimento:</label><br/>
+                                                                                                <input type="checkbox" name="revogada" id="revogada_criterio" value="{{revogada}}"
+                                                                                                       {{verifyChecked this revogada}} {{#bloquearEdicao this "revogada"}}disabled{{/bloquearEdicao}}>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="row-fluid ly-row-spaced" id="base-legal_criterio">
+                                                                            </div>
+
+                                                                            <div class="row-fluid ly-row-spaced previewVencimentos">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- NOTA -->
+
+                                                            <div id="notas_regra_vencimento_criterio" title="Notas para {{summarizeTitle criterioDistincao 'Nova Regra de Vencimento'}}">
+                                                            </div>
+
+                                                            <!-- /NOTA -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /REGRA DE VENCIMENTO -->
+
+                                            <!-- VENCIMENTOS MANUAIS -->
+                                            <div class="row-fluid ly-row-spaced">
+                                                <div class="span12">
+                                                    <legend class="subdivisao" data-entidade="vencimentoManual" id="headerVencimentoManual">
+                                                        Vencimentos Manuais <a href="javascript:void(0);" class="add pull-right"><i class="icon-obg-plus input-xxlarge"></i>&nbsp; Adicionar Vencimento Manual</a>
+                                                    </legend>
+
+                                                    <div class="agrupador detalhe">
+                                                        <div class="row-fluid ly-row-spaced-bottom">
+                                                            <div class="expandirColapsarTodos" data-entidade="vencimentoManual" id="expandirColapsar_vencimentosManuais_criterio">
+                                                            </div>
+                                                            <div class="pull-right">
+                                                                <a href="javascript:void(0);" id="link_notas_vencimento_manual_criterio"><i class="icon-gui-postit icon-large icon-btn-postit"></i>&nbsp;</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row-fluid ly-row-spaced-bottom" id="vencimentosManuais_criterio">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- /VENCIMENTOS MANUAIS -->
+
+                                        </div>
+
+
+                                        <!-- NOTA -->
+
+                                    <div id="notas_criterio" title="Notas para {{summarizeTitle tipo.identificador "Nova Condição de Pagamento"}}">
+                                    </div>
+
+                                    <div id="notas_regra_criterio" title="Notas para Regras de Vencimento">
+                                    </div>
+
+                                    <div id="notas_vencimento_manual_criterio" title="Notas para Vencimentos Manuais">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function addBaseLegal(tipoContainer){
+                var divBaseLegais;
+                var hiddenBasesLegais;
+                var hiddenBaseLegalString;
+                var baseLegalIdString;
+                var stringIdDataFimInstituidora;
+
+                if(tipoContainer === 'criterio'){
+                    divBaseLegais = $("#divBaseLegais");
+                    hiddenBasesLegais = $("#hiddenBasesLegais");
+                    hiddenBaseLegalString = "hiddenBaseLegalCriterio_";
+                    baseLegalIdString = "baseLegalCriterioId_";
+                    stringIdDataFimInstituidora = "fim_instituidora_criterio_";
+                }else{
+                    if(tipoContainer === 'regra'){
+                        divBaseLegais = $("#divBaseLegaisRegra");
+                        hiddenBasesLegais = $("#hiddenBasesLegaisRegra");
+                        hiddenBaseLegalString = "hiddenBaseLegalRegra_";
+                        baseLegalIdString = "baseLegalRegraId_";
+                        stringIdDataFimInstituidora = "fim_instituidora_regra_";
+                    }
+                }
+
+                var valueHiddenBasesLegais = hiddenBasesLegais.val();
+                valueHiddenBasesLegais++;
+                hiddenBasesLegais.val(valueHiddenBasesLegais);
+                var idHiddenBaseLegal = hiddenBaseLegalString + valueHiddenBasesLegais;
+                var baseLegalId = baseLegalIdString + valueHiddenBasesLegais;
+                var idDataFimInstituidora = stringIdDataFimInstituidora+valueHiddenBasesLegais;
+
+                var tagInstituidora = "<br/><br/>";
+                tagInstituidora += "<div id='"+baseLegalId+"' class='span12'>";
+                tagInstituidora += "<input type='hidden' id=" + idHiddenBaseLegal + " value='0'/>";
+                tagInstituidora += "<div class='spanBotaoAdd1'>";
+                tagInstituidora += "<button id='addBaseLegalAtualizadora' type='button' onclick='addBaseAlteradora("+idHiddenBaseLegal+","+baseLegalId+")'>+</button>";
+                tagInstituidora += "</div>";
+                tagInstituidora += "<div class='spanArea4 base-legal-instituidora'>";
+                tagInstituidora += "<label for='instituidora'>Base Legal Instituidora:</label><br>";
+                tagInstituidora += "<textarea rows='5' id='instituidora' class='textAreaBaseLegal'></textarea>";
+                tagInstituidora += "</div>";
+                tagInstituidora += "<div class='spanEfeito2'>";
+                tagInstituidora += "<div class='row-fluid inicio-efeito'>";
+                tagInstituidora += "<label for='inicio_instituidora'>Início de Efeito:</label><br />";
+                tagInstituidora += "<input type='text' class='textDateInicioFim' name='inicio_instituidora' id='inicio_instituidora' value=''/>";
+                tagInstituidora += "</div>";
+                tagInstituidora += "<div class='row-fluid ly-row-spaced fim-efeito'>";
+                tagInstituidora += "<label for='"+idDataFimInstituidora+"'>Fim de Efeito:</label><br />";
+                tagInstituidora += "<input type='text' class='textDateInicioFim dateFinalInstituidora' name='"+idDataFimInstituidora+"' id='"+idDataFimInstituidora+"' value=''/>";
+                tagInstituidora += "</div>";
+                tagInstituidora += "</div>";
+                tagInstituidora += "</div>";
+
+                divBaseLegais.append(tagInstituidora);
+            }
+
+            function addBaseAlteradora($idHiddenBaseLegal,$idBaseLegal) {
+                var idHiddenBaseLegal = $idHiddenBaseLegal.id;
+                var idBaseLegal = $idBaseLegal.id;
+                var hiddenBaseLegaL = $("#"+idHiddenBaseLegal);
+                var valueHiddenBaseLegal = hiddenBaseLegaL.val();
+
+                var baseLegalDiv = $("#"+idBaseLegal);
+
+                var tipoContainer = idHiddenBaseLegal.substring(15);
+                var divAlteradora = "<div class='spanArea4 offsetAlteradora6'>";
+                var stringIdDataFimInstituidora;
+                var stringIdDataFimAlteradora;
+                var stringIdDataInicioAlteradora;
+
+                if(Boolean(tipoContainer)) {
+                    if(tipoContainer.startsWith('Criterio')){
+                        stringIdDataFimInstituidora = "fim_instituidora_criterio_";
+                        stringIdDataFimAlteradora = "fim_alteradora_criterio_";
+                        stringIdDataInicioAlteradora = "inicio_alteradora_criterio_";
+                    }else {
+                        if (tipoContainer.startsWith('Regra')) {
+                            divAlteradora = "<div class='spanArea4 offsetAlteradoraRegra6'>";
+                            stringIdDataFimInstituidora = "fim_instituidora_regra_";
+                            stringIdDataFimAlteradora = "fim_alteradora_regra_";
+                            stringIdDataInicioAlteradora = "inicio_alteradora_regra_";
+                        }
+                    }
+                }
+
+                var idDataInicioAlteradora = stringIdDataInicioAlteradora+valueHiddenBaseLegal;
+                var idDataFimAlteradora = stringIdDataFimAlteradora+valueHiddenBaseLegal;
+
+                if (valueHiddenBaseLegal == 0) {
+                    var tagAtualizadora = "<div class='spanArea4 base-legal-atualizadora'>";
+                    tagAtualizadora += "<label for='atualizadora'>Base Legal Alteradora:</label><br>";
+                    tagAtualizadora += "<textarea rows='5' id='atualizadora' class='textAreaBaseLegal'></textarea>";
+                    tagAtualizadora += "</div>";
+
+                    baseLegalDiv.append(tagAtualizadora);
+
+                    var tagEfeito = "<div class='spanEfeito2'>";
+                    tagEfeito += "<div class='row-fluid inicio-efeito'>";
+                    tagEfeito += "<label for='"+idDataInicioAlteradora+"'>Início de Efeito:</label><br />";
+                    tagEfeito += "<input type='text' class='textDateInicioFim' name='"+idDataInicioAlteradora+"' id='"+idDataInicioAlteradora+"' value=''/>";
+                    tagEfeito += "</div>"
+                    tagEfeito += "<div class='row-fluid ly-row-spaced fim-efeito'>";
+                    tagEfeito += "<label for='"+idDataFimAlteradora+"'>Fim de Efeito:</label><br />";
+                    tagEfeito += "<input type='text' class='textDateInicioFim' name='"+idDataFimAlteradora+"' id='"+idDataFimAlteradora+"' value=''/>";
+                    tagEfeito += "</div>";
+                    tagEfeito += "</div>";
+                    baseLegalDiv.append(tagEfeito);
+
+                    var containerDataFimInstituidora = hiddenBaseLegaL.parent().find(".dateFinalInstituidora");
+                    var containerDataInicioAlteradora = $("#"+idDataInicioAlteradora);
+                    containerDataInicioAlteradora.blur(function(){
+                        containerDataFimInstituidora.val(containerDataInicioAlteradora.val());
+                    });
+
+                    valueHiddenBaseLegal++;
+                    hiddenBaseLegaL.val(valueHiddenBaseLegal);
+                } else {
+                    var idDataFimAlteradora = "fim_alteradora_"+valueHiddenBaseLegal;
+                    var tagAtualizadora = divAlteradora;
+                    tagAtualizadora += "<label for='atualizadora_1'>Base Legal Alteradora:</label><br>";
+                    tagAtualizadora += "<textarea rows='5' id='atualizadora_1' class='textAreaBaseLegal'></textarea>";
+                    tagAtualizadora += "</div>";
+
+                    baseLegalDiv.append(tagAtualizadora);
+
+                    var tagEfeito = "<br/><br/><br/><br/><br/><br/>";
+                    tagEfeito += "<div class='spanEfeito2'>";
+                    tagEfeito += "<div class='row-fluid inicio-efeito'>";
+                    tagEfeito += "<label for='"+idDataInicioAlteradora+"'>Início de Efeito:</label><br />";
+                    tagEfeito += "<input type='text' class='textDateInicioFim' name='"+idDataInicioAlteradora+"' id='"+idDataInicioAlteradora+"' value=''/>";
+                    tagEfeito += "</div>"
+                    tagEfeito += "<div class='row-fluid ly-row-spaced fim-efeito'>";
+                    tagEfeito += "<label for='"+idDataFimAlteradora+"'>Fim de Efeito:</label><br />";
+                    tagEfeito += "<input type='text' class='textDateInicioFim' name='"+idDataFimAlteradora+"' id='"+idDataFimAlteradora+"' value=''/>";
+                    tagEfeito += "</div>";
+                    tagEfeito += "</div>";
+                    baseLegalDiv.append(tagEfeito);
+
+                    var containerDataInicioAlteradora = $("#"+idDataInicioAlteradora);
+                    containerDataInicioAlteradora.blur(function(){
+                        var valueHiddenBaseLegalInferior = valueHiddenBaseLegal - 1;
+                        var containerDataFimAlteradoraInferior = $("#"+stringIdDataFimAlteradora+valueHiddenBaseLegalInferior);
+                        containerDataFimAlteradoraInferior.val(containerDataInicioAlteradora.val());
+                    });
+                }
+            }
+        </script>
+    </body>
+</html>

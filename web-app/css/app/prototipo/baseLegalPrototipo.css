@@ -1,0 +1,101 @@
+.agrupador {
+    border: solid 1px rgb(230, 230, 255);
+    background-color:#f4f4f4;
+    padding:10px;
+}
+
+#reagendamento .formContainer, #obrigacaoForm .formContainer {
+    padding:20px;
+    background:#FFF !important;
+}
+
+.bg-grayLightFormContainer {
+    background-color:  rgb(247, 247, 247);
+}
+
+.bg-grayLightFormContainerSubNivel {
+    background-color:  rgb(250, 250, 250);
+}
+
+.ly-row-spaced {
+    margin-top: 5px;
+}
+
+.ly-read-content {
+    padding: 2px 10px;
+}
+
+p.ly-title {
+    font-weight: bold;
+}
+
+.icon-obg-plus:before {
+   /* content: "c";*/
+}
+
+.textareaCriterioVencimentoPrototipo {
+    height:75px;
+    width: 100%;
+}
+
+input[type="text"], input[type="password"], select, textarea {
+    background-color: #fEfEfE;
+    border: 1px solid #ccc;
+    font: 11px verdana, arial, helvetica, sans-serif;
+    margin: 2px 0;
+    padding: 4px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-family: arial, helvetica, sans-serif;
+}
+
+input, textarea, keygen, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    font: 13.3333px Arial;
+}
+
+#obrigacaoList .chosen, #obrigacaoList .chosen input {
+    width:100%;
+}
+
+#obrigacaoForm .chosen, #filtroReagendamento .chosen, #notaForm .chosen {
+    width: 99%;
+}
+
+/* TODO: solução paliativa para o bug #135. Deve ser removida quando a solução definitiva for liberada no componente. */
+.span4  .select2-chosen {
+    width: 320px;
+}
+/* TODO: solução paliativa para o bug #135. Deve ser removida quando a solução definitiva for liberada no componente. */
+.span7  .select2-chosen {
+    width: 520px;
+}
+
+#obrigacaoShow .grupo .expandirColapsarTodos {
+    padding:10px;
+    font-weight:bold;
+    margin:10px 0px;
+}
+
+
+#obrigacaoShow .expandirColapsarTodos .action{
+    color:#0060AA;
+}
+
+#obrigacaoShow .expandirColapsarTodos:hover{
+    background-color: #C3E3F2;
+}
+
+.subtitulo h4 span, .subdivisaoPrototipo {
+    color:#434343;
+    line-height: 21px;
+}

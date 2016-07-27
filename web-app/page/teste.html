@@ -1,0 +1,148 @@
+<html xmlns="http://www.w3.org/1999/html">
+    <header>
+        <title>
+            Pagina de testes Alexandre Rodrigues - Xandy
+        </title>
+        <script type="text/javascript" src="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/js/vendor/jquery/jquery-1.10.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/app/prototipo/baseLegalPrototipo.css">
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/app/prototipo/bootstrap-responsive.prototipo.min.css">
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/app/prototipo/variablesPrototipo.css">
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/app/prototipo/gui-icons-size-prototipo.css">
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/vendor/select2/select2.css">
+        <link rel="stylesheet" type="text/css" href="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/css/app/prototipo/baseLegalComponentePrototipo.css">
+    </header>
+    <body>
+        <div class="span12">
+            <div  id="criterioVencimentoBody" class="agrupador">
+                <div id="subtituloCriterioVencimento" class="row-fluid">
+                    <div class="span12">
+                        <h4 class="black">
+                            <span id="criterioVencimentoTitulo">Transporte aéreo</span>
+                        </h4>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="formContainer">
+                            <div class="row-fluid ly-row-spaced">
+                                <div class="span12">
+                                    <div class="span10">
+                                        <label for="descricao_criterio">Descrição:</label><br />
+                                        <textarea rows="5" id="descricao_criterio" class="textareaCriterioVencimentoPrototipo">Transporte aéreo</textarea>
+                                    </div>
+                                    <div class="span2">
+                                        <div class="row-fluid inicio-efeito">
+                                            <label for="inicio_instituidora_criterio">Início de Efeito:</label><br />
+                                            <input type="text" class="textDateInicioFim" name="inicio_instituidora_criterio" id="inicio_instituidora_criterio" value="14/03/1990"/>
+                                        </div>
+
+                                        <div class="row-fluid ly-row-spaced fim-efeito">
+                                            <label for="fim_instituidora_criterio">Fim de Efeito:</label><br />
+                                            <input type="text" class="textDateInicioFim" name="fim_instituidora_criterio" id="fim_instituidora_criterio" value=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--base legal do critério-->
+                            <div>
+                                <label for="addBaseLegal" style="font-weight: bold"> Bases Legais: </label>
+                                <input type="hidden" id="hiddenBasesLegais" value="0"/>
+                                <button id="addBaseLegal" type="button" onclick="addBaseLegal()">+</button>
+                            </div>
+
+                            <div id="divBaseLegais">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function addBaseLegal(){
+                var hiddenBasesLegais = $("#hiddenBasesLegais");
+                var valueHiddenBasesLegais = hiddenBasesLegais.val();
+                valueHiddenBasesLegais++;
+                hiddenBasesLegais.val(valueHiddenBasesLegais);
+                var idHiddenBaseLegal = "hiddenBaseLegal_" + valueHiddenBasesLegais;
+                var baseLegalId = "baseLegalId_" + valueHiddenBasesLegais;
+
+                var divBaseLegais = $("#divBaseLegais");
+
+                var tagInstituidora = "<br/><br/>";
+                tagInstituidora += "<div id='"+baseLegalId+"' class='span12'>";
+                tagInstituidora += "<input type='hidden' id=" + idHiddenBaseLegal + " value='0'/>";
+                tagInstituidora += "<div class='spanBotaoAdd1'>";
+                tagInstituidora += "<button id='addBaseLegalAtualizadora' type='button' onclick='addBaseAlteradora("+idHiddenBaseLegal+","+baseLegalId+")'>+</button>";
+                tagInstituidora += "</div>";
+                tagInstituidora += "<div class='spanArea4 base-legal-instituidora'>";
+                tagInstituidora += "<label for='instituidora'>Base Legal Instituidora:</label><br>";
+                tagInstituidora += "<textarea rows='5' id='instituidora' class='textAreaBaseLegal'></textarea>";
+                tagInstituidora += "</div>";
+                tagInstituidora += "<div class='spanEfeito2'>";
+                tagInstituidora += "<div class='row-fluid inicio-efeito'>";
+                tagInstituidora += "<label for='inicio_instituidora'>Início de Efeito:</label><br />";
+                tagInstituidora += "<input type='text' class='textDateInicioFim' name='inicio_instituidora' id='inicio_instituidora' value=''/>";
+                tagInstituidora += "</div>";
+                tagInstituidora += "<div class='row-fluid ly-row-spaced fim-efeito'>";
+                tagInstituidora += "<label for='fim_instituidora'>Fim de Efeito:</label><br />";
+                tagInstituidora += "<input type='text' class='textDateInicioFim' name='fim_instituidora' id='fim_instituidora' value=''/>";
+                tagInstituidora += "</div>";
+                tagInstituidora += "</div>";
+                tagInstituidora += "</div>";
+
+                divBaseLegais.append(tagInstituidora);
+            }
+
+            function addBaseAlteradora($idHiddenBaseLegal,$idBaseLegal) {
+                var idHiddenBaseLegal = $idHiddenBaseLegal.id;
+                var idBaseLegal = $idBaseLegal.id;
+                var hiddenBaseLegaL = $("#"+idHiddenBaseLegal);
+                var valueHiddenBaseLegal = hiddenBaseLegaL.val();
+
+                var baseLegalDiv = $("#"+idBaseLegal);
+
+                if (valueHiddenBaseLegal == 0) {
+                    var tagAtualizadora = "<div class='spanArea4 base-legal-atualizadora'>";
+                    tagAtualizadora += "<label for='atualizadora'>Base Legal Alteradora:</label><br>";
+                    tagAtualizadora += "<textarea rows='5' id='atualizadora' class='textAreaBaseLegal'></textarea>";
+                    tagAtualizadora += "</div>";
+
+                    baseLegalDiv.append(tagAtualizadora);
+
+                    var tagEfeito = "<div class='spanEfeito2'>";
+                    tagEfeito += "<div class='row-fluid inicio-efeito'>";
+                    tagEfeito += "<label for='inicio_atualizadora'>Início de Efeito:</label><br />";
+                    tagEfeito += "<input type='text' class='textDateInicioFim' name='inicio_atualizadora' id='inicio_atualizadora' value=''/>";
+                    tagEfeito += "</div>"
+                    tagEfeito += "<div class='row-fluid ly-row-spaced fim-efeito'>";
+                    tagEfeito += "<label for='fim_atualizadora'>Fim de Efeito:</label><br />";
+                    tagEfeito += "<input type='text' class='textDateInicioFim' name='fim_atualizadora' id='fim_atualizadora' value=''/>";
+                    tagEfeito += "</div>";
+                    tagEfeito += "</div>";
+                    baseLegalDiv.append(tagEfeito);
+                    valueHiddenBaseLegal++;
+                    hiddenBaseLegaL.val(valueHiddenBaseLegal);
+                } else {
+                    var tagAtualizadora = "<div class='spanArea4 offsetAlteradora6'>";
+                    tagAtualizadora += "<label for='atualizadora_1'>Base Legal Alteradora:</label><br>";
+                    tagAtualizadora += "<textarea rows='5' id='atualizadora_1' class='textAreaBaseLegal'></textarea>";
+                    tagAtualizadora += "</div>";
+
+                    baseLegalDiv.append(tagAtualizadora);
+
+                    var tagEfeito = "<br/><br/><br/><br/><br/><br/>";
+                    tagEfeito += "<div class='spanEfeito2'>";
+                    tagEfeito += "<div class='row-fluid inicio-efeito'>";
+                    tagEfeito += "<label for='inicio_atualizadora'>Início de Efeito:</label><br />";
+                    tagEfeito += "<input type='text' class='textDateInicioFim' name='inicio_atualizadora' id='inicio_atualizadora' value=''/>";
+                    tagEfeito += "</div>"
+                    tagEfeito += "<div class='row-fluid ly-row-spaced fim-efeito'>";
+                    tagEfeito += "<label for='fim_atualizadora'>Fim de Efeito:</label><br />";
+                    tagEfeito += "<input type='text' class='textDateInicioFim' name='fim_atualizadora' id='fim_atualizadora' value=''/>";
+                    tagEfeito += "</div>";
+                    tagEfeito += "</div>";
+                    baseLegalDiv.append(tagEfeito);
+                }
+            }
+        </script>
+    </body>
+</html>

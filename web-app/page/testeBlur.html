@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste Blur - Xandy</title>
+    <script type="text/javascript" src="/home/ari/Desktop/workspace_obrigacoes/synchro-obrigacoes/web-app/js/vendor/jquery/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <div>
+        <label for="input1">Input 1</label>
+        <input type="text" id="input1" />
+    </div>
+    <br/><br/>
+    <div>
+        <label for="input2">Input 2</label>
+        <input type="text" id="input2"/>
+    </div>
+
+    <script>
+        $("#input1").blur(function(){
+           var val1 = $("#input1").val();
+            $("#input2").val(val1);
+        });
+    </script>
+</body>
+</html>

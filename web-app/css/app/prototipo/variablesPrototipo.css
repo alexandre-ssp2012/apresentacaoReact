@@ -1,0 +1,66 @@
+.blueDark {color: rgb(0, 96, 170); }
+.bg-blueDark {background-color: rgb(0, 96, 170); }
+
+.blue {color: rgb(22, 131, 219); }
+.bg-blue {background-color: rgb(22, 131, 219); }
+
+.blueMedium {color: rgb(30, 166, 249); }
+.bg-blueMedium {background-color: rgb(30, 166, 249); }
+
+.blueLight {color:  rgb(157, 215, 244); }
+.bg-blueLight {background-color:  rgb(157, 215, 244); }
+
+.blueThin {color:  rgb(205, 236, 249); }
+.bg-blueThin {background-color:  rgb(205, 236, 249); }
+
+.yellowDark { color:rgb(242, 177, 12);}
+.bg-yellowDark { background-color:rgb(242, 177, 12);}
+
+.yellow { color: rgb(249, 202, 6);}
+.bg-yellow { background-color: rgb(249, 202, 6);}
+
+.yellowMedium {color: rgb(249, 214, 65);}
+.bg-yellowMedium {background-color: rgb(249, 214, 65);}
+
+.yellowLight {color: rgb(249, 2226, 125);}
+.bg-yellowLight {background-color: rgb(249, 2226, 125);}
+
+.yellowThin {color: rgb(252, 235, 167); }
+.bg-yellowThin {background-color: rgb(252, 235, 167); }
+
+.greenDark {color:   rgb(60, 119, 3); }
+.bg-greenDark {background-color:   rgb(60, 119, 3); }
+
+.green {color:       rgb(96, 158, 24); }
+.bg-green {background-color:       rgb(96, 158, 24); }
+
+.greenMedium {color: rgb(119, 188, 10); }
+.bg-greenMedium {background-color: rgb(119, 188, 10); }
+
+.greenLight {color:  rgb(164, 226, 43); }
+.bg-greenLight {background-color:  rgb(164, 226, 43); }
+
+.greenThin {color:   rgb(217, 224, 33); }
+.bg-greenThin {background-color:   rgb(217, 224, 33); }
+
+.grayDark {color:   rgb(128, 128, 128); }
+.bg-grayDark {background-color:   rgb(128, 128, 128); }
+
+.gray {color:       rgb(171, 173, 176); }
+.bg-gray {background-color:       rgb(171, 173, 176); }
+
+.grayMedium {color: rgb(179, 179, 179); }
+.bg-grayMedium {background-color: rgb(179, 179, 179); }
+.border-grayMedium {border-color: rgb(179, 179, 179); }
+
+.grayLight {color:  rgb(230, 230, 230); }
+.bg-grayLight {background-color:  rgb(230, 230, 230); }
+
+.black {color:  rgb(0, 0, 0); }
+.bg-black {background-color:  rgb(0, 0, 0); }
+
+.white {color: rgb(255, 255, 255); }
+.bg-white {background-color: rgb(255, 255, 255); }
+
+.orange {color: rgb(242, 130, 12); }
+.red { color: rgb(255, 0, 0); }

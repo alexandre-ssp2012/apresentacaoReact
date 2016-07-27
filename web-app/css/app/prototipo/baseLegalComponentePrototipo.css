@@ -1,0 +1,61 @@
+.textAreaBaseLegal {
+    background-color: rgb(254, 254, 254);
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    font: 11px arial, helvetica, sans-serif;
+    margin: 2px 0px;
+    padding: 4px;
+    border-radius: 3px;
+    height: 65px;
+    width: 340px;
+}
+
+.icone-calendario {
+    background:url("../../../images/calendario.png") no-repeat center center;
+    width:20px;
+}
+
+.row-fluid .textDateInicioFim {
+    width: 90px;
+}
+
+.row-fluid .spanEfeito2 {
+    width: 110px;
+}
+
+.row-fluid .spanArea4 {
+    width: 340px;
+}
+
+.row-fluid .spanBotaoAdd1 {
+    width: 30px;
+}
+
+.row-fluid .offsetAlteradora6 {
+    margin-left: 600px;
+}
+
+.row-fluid .offsetAlteradoraRegra6 {
+    margin-left: 592px;
+}
+
+.hiddenBotao {
+    visibility: hidden;
+}
+
+.hiddenBotaoVisible {
+    visibility: visible;
+}
+
+select[disabled], textarea[disabled], input[type=text]:disabled,input[type=button]:disabled, input.is-disabled, input.is-always-disabled, div.is-disabled, span.is-disabled {
+    background-color: rgba(230, 222, 108, 0.7); /* grayLight */
+    border-color: rgb(210, 210, 210);
+    color: rgb(60, 60, 60);
+}
